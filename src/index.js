@@ -20,7 +20,9 @@ app.use(express.static(publicPath))
 app.use(teacherRouter)
 
 app.get('', (req, res) => {
-    res.send('Hello')
+    res.render('index', {
+        title: 'Verdict'
+    })
 })
 
 const port = process.env.PORT || 3000
