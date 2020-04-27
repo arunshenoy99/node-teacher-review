@@ -26,3 +26,7 @@ const teacherSchema = new mongoose.Schema({
         minlength: 1
     }
 })
+
+const Teacher = mongoose.model('Teacher', teacherSchema)
+
+module.exports = Teacher
