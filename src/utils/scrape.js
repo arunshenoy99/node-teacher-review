@@ -24,10 +24,10 @@ for (let i=1; i<=11; i++) {
         trs.forEach((tr) => {
             let tds = tr.querySelectorAll('td')
             tds.forEach((td) => {
-                data = data + td.text.toString().replace(/\s+/g, ' ').trim() + '\t\t'
+                data = data + td.text.toString().replace(/\s+/g, ' ').trim() + '-'
             })
             data = data + '\n'
         })
-        fs.writeFileSync(`data/dept-${i}.txt`, data)
+        fs.writeFileSync(`data/dept${i}.txt`, data)
     })
 }
