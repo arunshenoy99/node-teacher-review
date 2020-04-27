@@ -3,6 +3,7 @@ const path = require('path')
 const hbs = require('hbs')
 
 require('./db/mongoose')
+const teacherRouter = require('./routers/teachers')
 
 const app = express()
 
@@ -16,6 +17,7 @@ hbs.registerPartials(partialsPath)
 
 app.use(express.json())
 app.use(express.static(publicPath))
+app.use(teacherRouter)
 
 app.get('', (req, res) => {
     res.send('Hello')
