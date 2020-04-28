@@ -9,34 +9,55 @@
     <body>
         {{>navbar}}
         <header class="jumbotron">
-            <div class="container">
-                <div class="row row-header">
-                    <div class="col">
-                        <h1>Verdict</h1>
-                        <p>This is a page to give verdict on teachers</p>
-                    </div>
+            <div class="row row-header justify-content-center">
+                <div class="col-auto">
+                    <h1>Verdict</h1>
+                    <p>This is a page to give verdict on teachers</p>
                 </div>
             </div>
         </header>
-        <main>
-            <div class="container">
-                <div class="row justify-content-center" style="padding-bottom: 50px;">
-                    <div class="col-auto">
-                        <h3>{{title}}</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="accordion" id="accordion">
-                        {{#each teachers}}
-                            {{>card}}
-                        {{/each}}
+        <main>  
+            <div class="container" id="carouselcontainer">
+                <div class="row row-content">
+                    <div class="col-12">
+                        <div id="indexcarousel" class="d-none d-sm-block carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="carousel-caption d-none d-sm-block">
+                                        <h2>This is a page where students can pass reviews on teachers without any fear</h2>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-caption d-none d-sm-block">
+                                        <h2>Freedom from Oppressors</h2>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <h2 class="carousel-caption d-none d-sm-block">
+                                        Click on departments to start reviewing and free your mind from thoughts bothering you
+                                    </h2>
+                                </div>
+                            </div>
+                            <ol class="carousel-indicators">
+                                <li data-target="#indexcarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#indexcarousel" data-slide-to="1" class="active"></li>
+                                <li data-target="#indexcarousel" data-slide-to="2" class="active"></li>
+                            </ol>
+                            <a class="carousel-control-prev" href="#indexcarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" role="button" href="#indexcarousel" data-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </a>
+                            <button class="btn btn-danger btn-sm" type="button" id="carouselbutton">
+                                <span class="fa fa-pause"></span>
+                            </button>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </main>
-        <footer class="footer fixed-bottom" style="z-index: -1;">
+        <footer class="footer fixed-bottom">
             {{>footer}}
         </footer>
         {{>js}}
