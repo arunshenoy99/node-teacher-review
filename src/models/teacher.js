@@ -25,6 +25,14 @@ const teacherSchema = new mongoose.Schema({
         trim: true,
         minlength: 1
     }
+}, {
+    timestamps: true
+})
+
+teacherSchema.virtual('reviews', {
+    foreignField: 'teacher',
+    localField: '_id',
+    ref: 'Review'
 })
 
 const Teacher = mongoose.model('Teacher', teacherSchema)

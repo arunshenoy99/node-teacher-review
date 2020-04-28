@@ -4,8 +4,11 @@ $('.card-header').hover(function () {
 
 $('.card-header').click(function () {
     let id = $(this).attr('id').replace('header-', '')
-    $(`#${id}`).collapse('toggle')
+    $(`#body-${id}`).collapse('toggle')
 })
+
+var reviewTemplate = '<div class="row"><div class="col"><blockquote class="blockquote"><p class="mb-0">{{review}}</p><footer class="blockquote-footer"><cite>{{username}}</cite></footer></blockquote></div></div>'
+var template = Handlebars.compile(reviewTemplate)
 
 window.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -13,7 +16,7 @@ window.addEventListener('submit', (e) => {
     const $form = document.querySelector(`#${e.target.id}`)
     const $header = document.querySelector(`#header-${id}`)
     const formData = new FormData($form)
-    let data = {}
+    var data = {}
     formData.forEach((value, key) => {
         data[key] = value
     })
@@ -32,6 +35,11 @@ window.addEventListener('submit', (e) => {
         else {
             $header.classList.add('bg-success')
             $form.innerHTML = ""
+            console.log(data)
+            var html = template(data)
+            $('#noreview').html = "Some reviews are"
+            $(`#body-${id}`).append(html)
         }
     })
 })
+

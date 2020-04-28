@@ -19,6 +19,8 @@ const reviewSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref : 'Teacher'
     }
+}, {
+    timestamps: true
 })
 
 const review = mongoose.model('Review', reviewSchema)

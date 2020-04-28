@@ -26,6 +26,23 @@ router.get('/departments/:department/teachers', async (req, res) => {
         if (teachers.length === 0) {
             return res.status(404).send()
         }
+        for(var i = 0; i < teachers.length; i++) {
+            var sum = 0;
+            var average = 'No reviews'
+            await teachers[i].populate({
+                path:'reviews'
+            }).execPopulate()
+            for (var j = 0; j < teachers[i].reviews.length; j++) {
+                sum = sum + teachers[i].reviews[j].rating
+            }
+            if (sum > 0) {
+                average = sum/teachers[i].reviews.length
+                teachers[i]['average'] = Math.round(average)
+            }
+            else {
+                teachers[i]['average'] = average
+            }
+        }
         res.render('department', {
             title: teachers[0].department,
             teachers

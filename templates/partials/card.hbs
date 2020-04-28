@@ -1,6 +1,6 @@
 <div class="card card-content">
     <h3 class="card-header" id="header-{{_id}}">{{name}}</h3>
-    <div class="card-body collapse" id="{{_id}}">
+    <div class="card-body collapse" id="body-{{_id}}">
         <div class="row">
             <div class="col-auto">
               <p style="font-size:150%;">Qualification:<span class="text-info">{{qualification}}</span></p>
@@ -9,6 +9,11 @@
         <div class="row">
             <div class="col-auto">
                 <p style="font-size:150%;">Position:<span class="text-info">{{position}}</span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <p style="font-size: 150%;">Average Rating:<span class="text-info">{{average}}</span></p>
             </div>
         </div>
         <div class="row">
@@ -62,12 +67,33 @@
                         </div>
                     </div>
                 </form>
-                <div class="row">
-                    <div class="col">
-                        <p>Some reviews from your peers</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="#" data-target="#oldreviews-{{id}}" data-toggle="collapse">See user reviews</a>
+            </div>
+        </div>
+        <div class="container collapse" id="oldreviews-{{id}}">
+            {{#if reviews}}
+                {{#each reviews}}
+                    <div class="row" style="border: 1px ridge;">
+                        <div class="col">
+                            <p>Rating:{{rating}}/5</p>
+                            <blockquote class="blockquote">
+                                <p class="mb-0">{{text}}</p>
+                                <footer class="blockquote-footer"><cite>{{name}}</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                {{/each}}
+            {{else}}
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <p id="noreview-{{id}}">No reviews recieved be the first one to review {{name}}</p>
                     </div>
                 </div>
-            </div>
+            {{/if}}
         </div>
     </div>
 </div>

@@ -40,6 +40,10 @@ body {
     padding: 50px 0px 0px 0px;
 }
 
+.checked {
+    color: orange;
+}
+
 .card-content {
     padding: 0px auto;
     margin-bottom: 50px;
