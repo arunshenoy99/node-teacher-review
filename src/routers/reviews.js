@@ -1,6 +1,8 @@
 const express = require('express')
+const Filter = require('bad-words')
 const Review = require('../models/review')
 const Teacher = require('../models/teacher')
+
 
 const router = new express.Router()
 
@@ -17,15 +19,16 @@ router.post('/reviews/:id', async (req, res) => {
         if (reviewData.username === '') {
             reviewData.username = "Anon"
         }
+        const filter = new Filter()
         const saveableReview = {
-            name: reviewData.username,
-            text: reviewData.review,
+            name: filter.clean(reviewData.username),
+            text: filter.clean(reviewData.review),
             rating: parseInt(reviewData.ratings),
             teacher: id
         }
         const review = new Review(saveableReview)
         await review.save()
-        res.status(201).send()
+        res.status(201).send(review)
     } catch (e) {
         res.status(400).send()
     }

@@ -7,7 +7,7 @@ $('.card-header').click(function () {
     $(`#body-${id}`).collapse('toggle')
 })
 
-var reviewTemplate = '<div class="row"><div class="col"><blockquote class="blockquote"><p class="mb-0">{{review}}</p><footer class="blockquote-footer"><cite>{{username}}</cite></footer></blockquote></div></div>'
+var reviewTemplate = '<div class="row" style="border: 1px ridge;"><div class="col"><p>Rating:{{rating}}/5</p><blockquote class="blockquote"><p class="mb-0">{{text}}</p><footer class="blockquote-footer"><cite>{{name}}</cite></footer></blockquote></div></div>'
 var template = Handlebars.compile(reviewTemplate)
 
 window.addEventListener('submit', (e) => {
@@ -35,10 +35,11 @@ window.addEventListener('submit', (e) => {
         else {
             $header.classList.add('bg-success')
             $form.innerHTML = ""
-            console.log(data)
-            var html = template(data)
-            $('#noreview').html = "Some reviews are"
-            $(`#body-${id}`).append(html)
+            response.json()
+            .then((serverData) => {
+                var html = template(serverData)
+                $(`#oldreviews-${id}`).append(html)
+            })
         }
     })
 })
