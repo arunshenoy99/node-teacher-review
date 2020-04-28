@@ -1,5 +1,5 @@
 <div class="card card-content">
-    <h3 class="card-header" id="{{_id}}-header">{{name}}</h3>
+    <h3 class="card-header" id="header-{{_id}}">{{name}}</h3>
     <div class="card-body collapse" id="{{_id}}">
         <div class="row">
             <div class="col-auto">
@@ -23,22 +23,47 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-9">
-                <form action="" id="{{_id}}-form">
+                <form action="" id="form-{{_id}}">
                     <div class="form-group row">
                         <label for="username" class="col-md-2 col-form-label">Name:</label>
                         <div class="col-12 col-md-8">
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Name(Optional)">
+                            <input type="text" class="form-control" name="username" id="username-{{_id}}" placeholder="Name(Optional)">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="review" class="col-md-2 col-form-label">Review:</label>
                         <div class="col-12 col-md-10">
-                            <textarea name="review" id="review" rows="6" class="form-control" placeholder="Please enter your review for {{name}}"></textarea>
+                            <textarea name="review" id="review-{{_id}}" rows="6" class="form-control" placeholder="Please enter your review for {{name}}"></textarea>
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <label for="rating1-{{_id}}" class="col-md-2 col-form-label">Rating:</label>
+                        <div class="col-12 col-md-10">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="rating1-{{_id}}" name="ratings" value="1">
+                                <label for="rating1-{{_id}}" class="custom-control-label">1</label>
+                            </div>
+                             <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="rating2-{{_id}}" name="ratings" value="2">
+                                <label for="rating2-{{_id}}" class="custom-control-label">2</label>
+                            </div>
+                             <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="rating3-{{_id}}" name="ratings" value="3">
+                                <label for="rating3-{{_id}}" class="custom-control-label">3</label>
+                            </div>
+                             <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="rating4-{{_id}}" name="ratings" value="4">
+                                <label for="rating4-{{_id}}" class="custom-control-label">4</label>
+                            </div>
+                             <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="rating5-{{_id}}" name="ratings" value="5">
+                                <label for="rating5-{{_id}}" class="custom-control-label">5</label>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="offset-md-2 col-md-10">
-                            <button type="button" id="reviewsubmit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>
