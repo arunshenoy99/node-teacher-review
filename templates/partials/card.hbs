@@ -1,0 +1,53 @@
+<div class="card card-content">
+    <h3 class="card-header" id="{{_id}}-header">{{name}}</h3>
+    <div class="card-body collapse" id="{{_id}}">
+        <div class="row">
+            <div class="col-auto">
+                <p style="font-size:150%;">ID:<span class="text-info">{{_id}}</span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+              <p style="font-size:150%;">Qualification:<span class="text-info">{{qualification}}</span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <p style="font-size:150%;">Position:<span class="text-info">{{position}}</span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <p style="font-size:150%;">Give your feedback</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-9">
+                <form action="" id="{{_id}}-form">
+                    <div class="form-group row">
+                        <label for="username" class="col-md-2 col-form-label">Name:</label>
+                        <div class="col-12 col-md-8">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Name(Optional)">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="review" class="col-md-2 col-form-label">Review:</label>
+                        <div class="col-12 col-md-10">
+                            <textarea name="review" id="review" rows="6" class="form-control" placeholder="Please enter your review for {{name}}"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-md-2 col-md-10">
+                            <button type="button" id="reviewsubmit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col">
+                        <p>Some reviews from your peers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

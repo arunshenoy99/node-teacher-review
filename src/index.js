@@ -4,6 +4,7 @@ const hbs = require('hbs')
 
 require('./db/mongoose')
 const teacherRouter = require('./routers/teachers')
+const reviewRouter = require('./routers/reviews')
 
 const app = express()
 
@@ -18,6 +19,7 @@ hbs.registerPartials(partialsPath)
 app.use(express.json())
 app.use(express.static(publicPath))
 app.use(teacherRouter)
+app.use(reviewRouter)
 
 app.get('', (req, res) => {
     res.render('index', {
