@@ -1,5 +1,3 @@
-import { response } from "express"
-
 $('.card-header').hover(function () {
     $(this).css('cursor', 'pointer')
 })

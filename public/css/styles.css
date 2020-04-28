@@ -5,6 +5,12 @@
 .dropdown-menu {
     background-color: #cc7a00;
     border: none;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.dropdown-item:hover {
+    background-color: #cc7a00;
 }
 
 .row-header {

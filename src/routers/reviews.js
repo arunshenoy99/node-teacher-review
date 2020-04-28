@@ -14,11 +14,11 @@ router.post('/reviews/:id', async (req, res) => {
         if (!teacher) {
             return res.status(404).send()
         }
-        if (reviewData.name === '') {
-            reviewData.name = "Anon"
+        if (reviewData.username === '') {
+            reviewData.username = "Anon"
         }
         const saveableReview = {
-            name: reviewData.name,
+            name: reviewData.username,
             text: reviewData.review,
             rating: parseInt(reviewData.ratings),
             teacher: id
