@@ -45,7 +45,8 @@ router.get('/departments/:department/teachers', async (req, res) => {
         }
         res.render('department', {
             title: teachers[0].department,
-            teachers
+            teachers,
+            active2: 'active'
         })
     } catch (e) {
         res.status(500).send(e)

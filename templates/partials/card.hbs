@@ -71,7 +71,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-auto">
-                <a href="#" data-target="#oldreviews-{{id}}" data-toggle="collapse">See user reviews</a>
+                <a href="#" id="oldreviewsbutton-{{id}}" data-target="#oldreviews-{{id}}" data-toggle="collapse">See user reviews</a>
             </div>
         </div>
         <div class="container collapse" id="oldreviews-{{id}}">
@@ -87,12 +87,6 @@
                         </div>
                     </div>
                 {{/each}}
-            {{else}}
-                <div class="row justify-content-center">
-                    <div class="col-auto">
-                        <p id="noreview-{{id}}">No reviews recieved be the first one to review {{name}}</p>
-                    </div>
-                </div>
             {{/if}}
         </div>
     </div>

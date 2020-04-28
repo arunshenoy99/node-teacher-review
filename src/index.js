@@ -23,7 +23,8 @@ app.use(reviewRouter)
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Verdict'
+        title: 'Verdict',
+        active1: 'active'
     })
 })
 

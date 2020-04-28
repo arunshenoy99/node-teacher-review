@@ -7,6 +7,10 @@ $('.card-header').click(function () {
     $(`#body-${id}`).collapse('toggle')
 })
 
+$(window).ready(function() {
+    $('#rulesModal').modal('show')
+})
+
 var reviewTemplate = '<div class="row" style="border: 1px ridge;"><div class="col"><p>Rating:{{rating}}/5</p><blockquote class="blockquote"><p class="mb-0">{{text}}</p><footer class="blockquote-footer"><cite>{{name}}</cite></footer></blockquote></div></div>'
 var template = Handlebars.compile(reviewTemplate)
 
@@ -39,6 +43,7 @@ window.addEventListener('submit', (e) => {
             .then((serverData) => {
                 var html = template(serverData)
                 $(`#oldreviews-${id}`).append(html)
+                $(`#oldreviewsbutton-${id}`).click()
             })
         }
     })

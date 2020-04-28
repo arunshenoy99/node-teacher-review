@@ -7,13 +7,40 @@
         <title>{{title}}</title>
     </head>
     <body>
+        <div id="rulesModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Rules</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <dl class="row">
+                                    <dt class="col-sm-3">Be Respectful</dt>
+                                    <dd class="col-sm-9">Your teachers are humans too.</dd>
+                                    <dt class="col-sm-3">Be Honest</dt>
+                                    <dd class="col-sm-9">The truth is the only constant.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">I Understand</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
          {{>navbar}}
-        <header class="jumbotron">
+        <header class="jumbotron bg-white">
             <div class="container">
                 <div class="row row-header justify-content-center">
                     <div class="col-auto">
                         <h1>Verdict</h1>
-                        <p>This is a page to give verdict on teachers</p>
+                        <p>Welcome! This is a website that helps students to share opinions and reviews about their teachers.</p>
                     </div>
                 </div>
             </div>
